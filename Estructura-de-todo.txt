@@ -1,0 +1,14 @@
+
+19/08
+Usando el documento Primero
+Programando el area de los cuadrilateros
+
+
+Preguntas:
+Existe for... in en javascript?
+Podriamos ver en algun momento html y css (despues de saber las bases javascript)?
+Pra que sirve let, en class expresions?
+Cual es el uso de la herramienta set?
+
+Problemas:
+No se donde poner el IF
