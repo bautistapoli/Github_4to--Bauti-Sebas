@@ -1,11 +1,14 @@
 
 19/08
-Usando el documento 
+Usando el documento Characters
 Programando el trabajo de personajes
 
 
 Preguntas:
+Does it exist any type of module or library in Javascript 
+En que parte seria recomendable crear las variables en mi codigo
 
 
 Problemas:
+No se como, pero mi codigo funciono
 
