@@ -1,44 +1,62 @@
-class Rectangulo extends Figura {
-  contructor(lados){
-    if(lados.length == 4){
-      super(lados);
-    } else {
-      console.log("No se puede sacar el Rectangulo")
-      }
-      area(){
-        if(this.lados[1] == this.lados[2]){
-          this,lados[1] * this.lados[3]
-        } else {
-          this.lados[1] * this.lados[2]
 
-        }
-      }
-    }
+class Personajes{
+  constructor(health, shield, power){
+    this.health = health
+    this.shield = shield
+    this.power = power
   }
-
-class Circulo extends Figura{
-  constructor(lados){
-      radio = lados
-    if(//radio.leght == 1){
-    super(//radio);
-      perimetro(){
-         (radio^2) * Math.PI
-      }
-      area(){
-          (Math.PI*2) * radio
-      }
-    } else {
-    console.log("No se puede hacer un Circulo");
+  attack(player_2) {
+    player_2.health = player_2.health - this.power + player_2.shield
   }
-
 }
-area(){
-  var result = (base * altura) / 2
-  return result
+
+class Archer extends Personajes{
+  constructor(){
+    super(120,15,90)
+  }
 }
-//if(this.lados[1] + this.lados[2] > this.lados[3] ||
-   //this.lados[1] + this.lados[3] > this.lados[2] ||
-   //this.lados[1] + this.lados[2] > this.lados[3]) {
+
+class Knight extends Personajes{
+  constructor(){
+    super(150,50,50)
+  }
+}
+
+class Gigant extends Personajes{
+  constructor(){
+    super(750,0,60)
+  }
+}
+
+var player_1 = new Gigant
+var player_2 = new Archer
+
+//if (turno % 2 == 0){
+//   player_1.life = player_1.life - player_2.power
+//   player_1.life = player_1.life + player_1.shield
+// } else {
+//   player_2.life = player_2.life - player_1.power
+//   player_2.life = player_2.life + player_2.shield
+// }
+// turno = turno + 1
 
 
+var who_wins = function( player1, player2 ){
+  if (player1.health != 0 || player2.health != 0){
+    console.log("Hola")
+    // for (i = 0 ; i < 3  ; i++){
+    //   if (i * 1 == 1){
+    //     player_2.attack(player_1)
+    //   } else {
+    //     player_1.attack(player_2)
+    //   }
+    //   if (i == 1){
+    //     i = i - 2
+    //   }
+    //}
+  } if (player_2.health == 0){
+      return(player_1)
+    } else if(player_1.health == 0){
+        return(player_2.health)
+  }
 }
