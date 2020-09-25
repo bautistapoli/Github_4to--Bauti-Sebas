@@ -10,6 +10,8 @@ Herramientas practicas que no conozco?
 Como hago para que un switch tenga parametros
   Por ejemplo entre 2 y 9
   O un case que se cumple cuando es mayor a 14
+ 
+Vale la pena hacer una funcion dentro de otra funcion???
 
 
 Problemas:
