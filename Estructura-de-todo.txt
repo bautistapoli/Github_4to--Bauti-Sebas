@@ -5,15 +5,24 @@ Programando el trabajo de personajes
 
 
 Preguntas:
-Cuales son los modules o libraries en javascript 
-Herramientas practicas que no conozco?
-Como hago para que un switch tenga parametros
-  Por ejemplo entre 2 y 9
-  O un case que se cumple cuando es mayor a 14
+  Cuales son los modules o libraries en javascript 
+   Herramientas practicas que no conozco?
+  Como hago para que un switch tenga parametros
+    ªPor ejemplo entre 2 y 9
+    ªO un case que se cumple cuando es mayor a 14
+   Como se hace Debugging
+   Cuando se usa el try...catch
  
-Vale la pena hacer una funcion dentro de otra funcion???
+  Vale la pena hacer una funcion dentro de otra funcion???
+  Se puede usar en una computadora node.js
 
 
 Problemas:
 Tengo problemas por todos lados, sinceramente
 
+Para que sirve:
+static methodName() { ... }
+dump()
+Map
+instanceof
+typeof
