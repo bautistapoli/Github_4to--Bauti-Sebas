@@ -5,10 +5,13 @@ Programando el trabajo de personajes
 
 
 Preguntas:
-Does it exist any type of module or library in Javascript 
-En que parte seria recomendable crear las variables en mi codigo
+Cuales son los modules o libraries en javascript 
+Herramientas practicas que no conozco?
+Como hago para que un switch tenga parametros
+  Por ejemplo entre 2 y 9
+  O un case que se cumple cuando es mayor a 14
 
 
 Problemas:
-No se como, pero mi codigo funciono
+Tengo problemas por todos lados, sinceramente
 
