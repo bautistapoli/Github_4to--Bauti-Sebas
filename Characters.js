@@ -9,8 +9,11 @@ class Personajes{
     player_2.health = player_2.health - this.power + player_2.shield
 
   } spower(player_2){
-    player_2.health = player_2 == Gigant ? player_2.health - this.power : player_2.health - this.power * 2
+    this.spower = this.attack(player_2) * 2
   }
+    toString(){
+
+    }
 }
 
 class Archer extends Personajes{
@@ -31,49 +34,41 @@ class Gigant extends Personajes{
   }
 }
 
-
-var turn = 0
-var opponent = 1
-var playerList = []
-
 console.log("Hello, this game is call Characters")
 
 
-/* Explicacion de como funciona esto:
-Primero, creo un array con string asignada a cada jugador
-
-Despues va el proceso de ataque:
-El jugador x ataca al siguiente en la lista a menos que sea el ultimo
-En el caso que sea el ultimo, este ataca al primero
-Cada vez se pregunta si el jugador que va a ser atacado no tiene vida = 0
+/* Tengo dos problemas:
+No se como hacer la caracteristica toString
+No se como no eliminar a los personajes que pierden, y igualmente tener un valor final
 */
 
-function battle(array , players){
-  /* Tengo un problema con esto, que cuando llamo varias veces a la funcion
-  se sobreescribe los valores, entonces salta error
-  */
-  for (var i = 0 ; i < players ; i++){
-    playerList.push(" player_" + i + " ")
-  } console.log(playerList);
+
+function battle(array, type){
+  let player = 0
+  var opponent = 1
+  var playerList = array.lenght
 
   do {
-    var random_specs = Math.floor(Math.random() * 5) + 1 ;
+    let random_specs = Math.floor(Math.random() * 5) + 1 ;
     if (random_specs == 5){
-        array[turn].spower(array[opponent])
+        array[player].spower(array[opponent])
         console.log("super power");
     } else if (random_specs > 1 && random_specs < 5 ) {
-      array[turn].attack(array[opponent])
-    } turn == players - 1 ? turn = 0 : turn += 1
-      opponent == players - 1 ? opponent = 0 : opponent += 1
-    } while (array[opponent].health > 0);
-
-      array.splice(opponent , 1)
-      playerList.splice(opponent , 1)
-      console.log("Wins " + playerList);
-      players = playerList.length
+      array[player].attack(array[opponent])
+    }  if (type === "turns"){
+        player = player == array.lenght - 1 ? 0 : player + 1
+        opponent = player == array.lenght - 2 ? 0 : opponent + 1
+      } else{
+        player = Math.floor(Math.random() * array.lenght) + 1
+        opponent = Math.floor(Math.random() * array.lenght) + 1
+      }
+      array[player].health <= 0 ? (playerList--, array.splice(player)) :  array[opponent].health <= 0 ? array.splice(opponent) :  null
+      }
+    } while (playerList > 1 );
+      return  array.name()
 }
 
-var game = function (players){
+const game = function (players){
   if (players <= 1){
     window.alert("Sorry but the game cannot operate \n with less that two players");
   }else {
@@ -94,15 +89,14 @@ var game = function (players){
             console.log(characters[i])
       }
     }
-      battle(characters,players)
+      battle(characters)
   }
 }
 
 
-/*el primer if es para la equivocacion del ataque
-  el primer else es que no se equivoca
-  despues es el super ataque
 
 
+/*
+  condición ? expr1 : expr2
   do sencuense
   while (conditin); */
